@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>WaitElement - Automation Studio.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "WaitElement";
+    var mkdocs_page_input_path = "wait.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Automation Studio.</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Prod Studio</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../prodstudio/">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Driver</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../driver/">Driver</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../find/">FindElement</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fire/">FireHiving</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">WaitElement</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#como-usar">Como Usar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aguardando-elemento">Aguardando Elemento</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#find">find</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scroll_page">scroll_page</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#while_present">while_present</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Action</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../execute/">Execute</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Automation Studio.</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>WaitElement</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="waitelement">WaitElement</h1>
+<p>Alguns elementos podem demorar aparecer na tela.<br />
+A classe WaitElement aguarda até que o elemento esteja visível na tela para interação.</p>
+<p>Faça a importação da classe:</p>
+<pre><code class="language-python">from automation_studio.prod_driver.wait import WaitElement
+</code></pre>
+<h2 id="como-usar">Como Usar</h2>
+<p><strong><em>WaitElement(driver: FindElement = None, time_wait=0)</em></strong></p>
+<blockquote>
+<blockquote>
+<p><strong><em>driver</em></strong>: <em>type</em> FindElement: Obejeto driver com o arquivo .toml.</p>
+<p><strong><em>time_wait</em></strong>: <em>type</em> float: Tempo em segundos que vai aguardar até encontrar o elemento.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: FireHivingElement</p>
+</blockquote>
+<pre><code>Se passar o tempo passado a classe vai retornar uma exceção ElementNotFoundException.
+</code></pre>
+<h2 id="aguardando-elemento">Aguardando Elemento</h2>
+<p>Agora é encontrar o elemento que vamos aguardar.</p>
+<p>A classe <em>WaitElement</em> possui os metodos <strong><em>find</em></strong>, <strong><em>scroll_page</em></strong> e <strong><em>while_present</em></strong></p>
+<h3 id="find">find</h3>
+<p>O find vai tentar encontrar o elemento passado pelo tempo passado.</p>
+<p>Você pode passar um <em>str</em>.
+Exemplo:</p>
+<pre><code class="language-python">WaitElement(driver, 10).find('elemento')
+</code></pre>
+<p>Você também pode passar uma <em>list</em>.
+Exemplo:</p>
+<pre><code class="language-python">WaitElement(driver, 10).find(['elemento1','elemento2'])
+</code></pre>
+<p>Se passar um <em>str</em> ele vai procurar somente esse elemento, mas se passar uma lista de elementos ele vai retornar o primeiro elemento que encontrar igual ao metodo first_to_find <a href="../find/">aqui</a>. </p>
+<p><strong><em>find(element: Union[List, str])</em></strong></p>
+<blockquote>
+<blockquote>
+<p><strong><em>element</em></strong>: [List, str]: Elemento que deseja encontrar na tela.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: FireHivingElement</p>
+</blockquote>
+<h3 id="scroll_page">scroll_page</h3>
+<pre><code class="language-python">WaitElement(driver, 10).scroll_page()
+</code></pre>
+<p>O metodo scroll_page vai rolar a tela até encontrar o elemento.</p>
+<p><strong><em>scroll_page(element: Union[List, str], direction: str = "down", scroll_speed: int = 100, time_between_scrolling: float = 0.5)</em></strong></p>
+<blockquote>
+<blockquote>
+<p><strong><em>element</em></strong>: [List, str]: Elemento que deseja encontrar na tela.</p>
+<p><strong><em>direction</em></strong>: str: Direção que deseja que a tela vai rolar pode ser "up" ou "down".</p>
+<p><strong><em>scroll</em>speed</strong>_: int: Velocidade em cliques que a tela vai rolar.</p>
+<p><strong><em>time</em>between_scrolling</strong>_: float: Tempo que o metodo vai aguardar entre uma rolagem e outra.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: FireHivingElement</p>
+</blockquote>
+<h3 id="while_present">while_present</h3>
+<pre><code class="language-python">WaitElement(driver, 10).while_present()
+</code></pre>
+<p>O metodo vai parar a execução até que o elemento passado não esteja mais presente na tela.</p>
+<p>Exemplo: Há uma tela de loading e você quer que a execução retorne quando esse loading sair, então use esse metodo e passe o tempo que deseja na chamada da classe.</p>
+<p>Preste bastante atenção a isso. Pois ele só vai aguardar pelo tempo passado na chamada da classe no <em>time_wait</em>.</p>
+<blockquote>
+<blockquote>
+<p><strong><em>element</em></strong>: [List, str]: Elemento que deseja encontrar na tela.</p>
+</blockquote>
+</blockquote>
+<p>O elemento se comporta do mesmo jeito que o find. Se passar um <em>str</em> vai pegar o elemento, se passar <em>list</em> ele vai retornar o primeiro elemento que encontrar.</p>
+<p>Como esse metodo é só um bloqueante ele não tem retorno.</p>
+<blockquote>
+<p><strong><em>Return</em></strong>: None</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../execute/" class="btn btn-neutral float-right" title="Execute">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../fire/" class="btn btn-neutral" title="FireHiving"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../fire/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../execute/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
