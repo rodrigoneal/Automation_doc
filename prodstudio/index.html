@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Prod Studio - Automation Studio.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Prod Studio";
+    var mkdocs_page_input_path = "prodstudio.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Automation Studio.</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Prod Studio</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#como-usar">Como Usar</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mapeando-o-elemento">Mapeando o elemento</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mapeamento-simples">Mapeamento Simples.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mapeamento-multipla">Mapeamento Multipla</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mapeamento-ocr">Mapeamento OCR</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mapeamento-por-video">Mapeamento por video</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../driver/">Driver</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Automation Studio.</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Prod Studio</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="prod-studio">Prod Studio</h1>
+<p>Não tem como usar o <em>Automation Studio</em> sem aprender o basico do <em>Prod Studio</em>.</p>
+<p>Com a nova versão do <em>Prod Studio</em> você não precisa mais criar a pasta e o arquivo .toml.
+na chamada do <em>Prod Studio</em> você passa o nome dos arquivos.</p>
+<p>Exemplo: </p>
+<pre><code class="language-bash">python -m prod_studio config.toml img
+</code></pre>
+<p>Se não arquivos não existirem, o <em>prod_studio</em> vai criar automaticamente.</p>
+<h2 id="como-usar">Como Usar</h2>
+<p>Crie uma pasta onde ficará as imagens e videos (Por padrão usamos "img"). </p>
+<p>Crie um arquivo <em>.toml</em> (Por padrão usamos "config.toml").</p>
+<pre><code>config.toml    # Arquivo toml com os caminhos das imagens.
+img/           # Pasta com as imagens. 
+    logo.img  # Imagem usada pelo robo.
+    ...       # images and outros arquivos.
+</code></pre>
+<p>O Automation Studio faz a instalação do prod studio por dependencia, mas caso deseja
+pode fazer a instalação pelo pip.</p>
+<pre><code class="language-bash">pip install git+https://github.com/digital-path/prod_studio@default#egg=prod_studio
+</code></pre>
+<h3 id="mapeando-o-elemento">Mapeando o elemento</h3>
+<pre><code class="language-bash">python -m prod_studio config.toml img
+</code></pre>
+<hr />
+<h5 id="mapeamento-simples">Mapeamento Simples.</h5>
+<blockquote>
+<blockquote>
+<p><img alt="selecao simples" src="../img/simples.gif" /></p>
+<p>Exemplo: Mapear o logo da Google.</p>
+<p>Coloque o mouse na parte superior esquerdo do elemento que deseja mapear aperte <em>F1</em> e levemente arraste para
+a parte inferior direita e aperte <em>F1</em> novamente para finalizar o mapeamento. </p>
+<p>No terminal dê nome ao elemento e aperte <em>ENTER</em>.</p>
+<p>A imagem será salva dentro da pasta passada na chamada do CLI do Prod Studio.</p>
+<p>O caminho relativo da imagem será escrito dentro do arquivo .toml passado na chamada do CLI do Prod Studio.</p>
+<p>O terminal vai mostrar as chances do robô encontrar aquele elemento na tela.</p>
+<p><strong>Quanto mais perto de 1.0 melhor e o robô só encontrará elementos com precisão acima de 0.9</strong></p>
+</blockquote>
+</blockquote>
+<hr />
+<h5 id="mapeamento-multipla">Mapeamento Multipla</h5>
+<blockquote>
+<blockquote>
+<p><img alt="selecao multipla" src="../img/multipla.gif" /></p>
+<p>Exemplo: Mapear só um "O" do logo da Google.</p>
+<p>A seleção multipla é bem parecida com a seleção simples.
+Coloque o mouse na parte superior esquerda do elemento pai aperte <em>F2</em> e levemente arraste o mouse para
+a parte inferior direita e aperte <em>F2</em>. Agora vai ao elemento filho que deseja mapear e faça o mesmo procedimento.
+No terminal dê nome ao elemento e aperte <em>ENTER</em>.</p>
+<p>A imagem será salva dentro da pasta passada na chamada do CLI do Prod Studio.</p>
+<p>O caminho relativo da imagem será escrito dentro do arquivo .toml passado na chamada do CLI do Prod Studio.</p>
+<p>Dentro do .toml será salvo um tip, esse tip é a dica de onde o bot vai procurar o elemento.</p>
+<p>Primeiro faz o mapeamento do elemento pai.</p>
+<p>Depois faz o mapeamento do elemento filho dentro do pai.</p>
+<p><strong>Quanto mais perto de <em>1.0<em> melhor e o robô só encontrará elementos com precisão acima de </em>0.9</em></strong></p>
+</blockquote>
+</blockquote>
+<hr />
+<h5 id="mapeamento-ocr">Mapeamento OCR</h5>
+<blockquote>
+<blockquote>
+<p>A seleção OCR encontra um texto na tela. 
+Coloque o mouse na parte superior esquerdo do elemento que deseja mapear aperte <em>F3</em> e levemente arraste para
+a parte inferior direita e aperte <em>F3</em> novamente para finalizar o mapeamento. </p>
+<p>O modo de seleção é muito parecido com a seleção simples, mas não mostrará a precisão do bot achar o elemento e sim o texto na tela encontrando.</p>
+<p>O texto será salvo dentro do .toml com o tip. Você pode apagar o <em>expected_text</em> para encontrar qualquer texto dentro daquele tip.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h5 id="mapeamento-por-video">Mapeamento por video</h5>
+<blockquote>
+<blockquote>
+<p>Bem parecido com a seleção simples.
+Ele grava a tela e salva como video.
+Coloque o mouse na parte superior esquerdo do elemento que deseja mapear aperte <em>F4</em> e levemente arraste para
+a parte inferior direita e aperte <em>F4</em> novamente começar a gravar.
+Um contador vai mostrar o tempo de gravação. Aperte <em>F4</em> para finalizar a gravação.</p>
+<p>O Video será salva dentro da pasta passada na chamada do CLI do Prod Studio.</p>
+<p>O caminho relativo do video será escrito dentro do arquivo .toml passado na chamada do CLI do Prod Studio.</p>
+</blockquote>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../driver/" class="btn btn-neutral float-right" title="Driver">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../driver/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
