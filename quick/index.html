@@ -53,6 +53,16 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Quick start</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#mapear-o-elemento-com-o-prod-studio">Mapear o elemento com o prod studio.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usando-o-driver-do-automation-studio">Usando o Driver do Automation Studio.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#localizando-o-elemento">Localizando o elemento.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interagindo-com-o-elemento">Interagindo com o elemento.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-magia-acontece">A magia acontece</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -115,11 +125,9 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="quickstart">Quickstart</h2>
+                <h1 id="quickstart">Quickstart</h1>
 <p>Vamos fazer o <em>Automation Studio</em> encontrar e clicar no logo do pycharm.</p>
-<ul>
-<li>Mapear o elemento com o <em>prod studio</em>.</li>
-</ul>
+<h2 id="mapear-o-elemento-com-o-prod-studio">Mapear o elemento com o <em>prod studio</em>.</h2>
 <pre><code class="language-python">python -m prod_studio config.toml img
 </code></pre>
 <blockquote>
@@ -138,9 +146,7 @@
 Não precisa colocar a extensão da imagem, só o nome que será a chave dentro do toml.</p>
 </blockquote>
 </blockquote>
-<ul>
-<li>Usando o Driver do Automation Studio.</li>
-</ul>
+<h2 id="usando-o-driver-do-automation-studio">Usando o Driver do Automation Studio.</h2>
 <blockquote>
 <blockquote>
 <p>Importe o Driver do automation studio.</p>
@@ -155,9 +161,7 @@ Não precisa colocar a extensão da imagem, só o nome que será a chave dentro 
 </blockquote>
 <pre><code class="language-python">driver = Driver('config.toml')
 </code></pre>
-<ul>
-<li>Localizando o elemento.</li>
-</ul>
+<h2 id="localizando-o-elemento">Localizando o elemento.</h2>
 <pre><code class="language-python">driver.find_element('logo')
 </code></pre>
 <blockquote>
@@ -166,9 +170,7 @@ Não precisa colocar a extensão da imagem, só o nome que será a chave dentro 
 <p>Você pode salvar em uma varialvel ou pode interagir com elemento.</p>
 </blockquote>
 </blockquote>
-<ul>
-<li>Interagindo com o elemento.</li>
-</ul>
+<h2 id="interagindo-com-o-elemento">Interagindo com o elemento.</h2>
 <blockquote>
 <blockquote>
 <p>Vamos clicar no elemento. </p>
@@ -176,9 +178,7 @@ Não precisa colocar a extensão da imagem, só o nome que será a chave dentro 
 </blockquote>
 <pre><code class="language-python">driver.find_element('logo').click()
 </code></pre>
-<ul>
-<li>A magia acontece</li>
-</ul>
+<h2 id="a-magia-acontece">A magia acontece</h2>
 <p><img alt="voila" src="../img/click.gif" /></p>
               
             </div>
