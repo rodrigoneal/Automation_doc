@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>FireHiving - Automation Studio.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "FireHiving";
+    var mkdocs_page_input_path = "driver\\fire.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Automation Studio.</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Home</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Automation Studio</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick/">Quick start</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Prod Studio</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../prodstudio/prodstudio/">Resumo</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Driver</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../driver/">Driver</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../find/">FindElement</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">FireHiving</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#click">Click</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hover">Hover</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#writter">Writter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy">Copy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#drag_and_drop">Drag_and_drop</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#is_displayed">Is_displayed</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../wait/">WaitElement</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Action</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../action/execute/">Execute</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Automation Studio.</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Driver &raquo;</li>
+        
+      
+    
+    <li>FireHiving</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="interagindo-com-elemento">Interagindo com Elemento</h1>
+<p>Depois de encontrar o elemento você normalmente vai querer interagir com ele. E é nessa seção que você vai aprender as principais funções.</p>
+<hr />
+<h3 id="click">Click</h3>
+<blockquote>
+<p>Clica no elemento.</p>
+</blockquote>
+<pre><code class="language-python">driver.find_element(&quot;elemento&quot;).click()
+</code></pre>
+<blockquote>
+<p><strong><em>click(button: str = "left", clicks: int = 1, time_until_click: float = 0)</em></strong></p>
+<blockquote>
+<p><strong><em>button</em></strong> : str: Qual lado do mouse vai ser clicado.  </p>
+<p><strong><em>clicks</em></strong>: int: Quantas vezes o mouse vai clicar.</p>
+<p><strong><em>time</em>until_click</strong>_: float: O mouse será movido para cima do elemento e vai aguardar o tempo passado.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: None</p>
+</blockquote>
+<hr />
+<h3 id="hover">Hover</h3>
+<blockquote>
+<p>Move o mouse para cima do elemento.</p>
+</blockquote>
+<pre><code class="language-python">driver.find_element(&quot;elemento&quot;).hover()
+</code></pre>
+<blockquote>
+<p><strong><em>hover(time_until_hover: float = 0)</em></strong></p>
+<blockquote>
+<p><strong><em>time</em>until_click</strong>_: float: O mouse será movido para cima do elemento e vai aguardar o tempo passado.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: None</p>
+</blockquote>
+<hr />
+<h3 id="writter">Writter</h3>
+<blockquote>
+<p>Escreve o texto no elemento.</p>
+</blockquote>
+<pre><code class="language-python">driver.find_element(&quot;elemento&quot;).writter()
+</code></pre>
+<blockquote>
+<p><strong><em>writter(text: str, clear: bool = False, time_until_writter: float = 0)</em></strong></p>
+<blockquote>
+<p><strong><em>text</em></strong>: str: Texto que será escrito no elemento.</p>
+<p><strong><em>clear</em></strong>: bool: Apaga o texto que já está no elemento antes de escrever.</p>
+<p><strong><em>time</em>until_writter</strong>_: float: Clica no elemento e aguarda o tempo passado antes de escrever.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: None</p>
+</blockquote>
+<hr />
+<h3 id="copy">Copy</h3>
+<blockquote>
+<p>Copia o elemento.</p>
+</blockquote>
+<pre><code class="language-python">driver.find_element(&quot;elemento&quot;).copy()
+</code></pre>
+<blockquote>
+<p>copy(func_copy: Any, safe_copy: bool = False, time_until_copy: float = 0)</p>
+<blockquote>
+<p><strong><em>func_copy</em></strong>: Any: Função que será chamada para fazer a copia. "Detalhes abaixo"</p>
+<p><strong><em>safe_copy</em></strong>: bool: Certifica que a copia não está vazia.</p>
+<p><strong><em>time_until_copy</em></strong>: float: Clica no elemento e aguarda o tempo passado antes de copiar.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: None</p>
+</blockquote>
+<p>Algumas funções para usar com o <strong><em>func</em>copy</strong>_ estão no modulo <a href="../../action/execute/">Execute</a>, mas você também pode fazer a sua propria função.</p>
+<hr />
+<h3 id="drag_and_drop">Drag_and_drop</h3>
+<blockquote>
+<p>Clica e arrasta um elemento para cima do outro.</p>
+</blockquote>
+<pre><code class="language-python">driver.find_element(&quot;elemento_drag&quot;, &quot;elemento_drop&quot;).drag_and_drop()
+</code></pre>
+<blockquote>
+<p>drag_and_drop(duration: float = 0.5)</p>
+<blockquote>
+<p><strong><em>duration</em></strong>:float: Tempo que arrasta um elemento no outro</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: None</p>
+</blockquote>
+<hr />
+<h3 id="is_displayed">Is_displayed</h3>
+<pre><code class="language-python">driver.find_element(&quot;elemento&quot;).is_displayed()
+</code></pre>
+<blockquote>
+<p>Mostra se o elemento está na tela</p>
+<p>is_displayed()</p>
+<p><strong><em>Return</em></strong>: bool</p>
+</blockquote>
+<p>x</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../wait/" class="btn btn-neutral float-right" title="WaitElement">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../find/" class="btn btn-neutral" title="FindElement"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../find/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../wait/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

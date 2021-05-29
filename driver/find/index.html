@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>FindElement - Automation Studio.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "FindElement";
+    var mkdocs_page_input_path = "driver\\find.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Automation Studio.</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Home</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Automation Studio</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick/">Quick start</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Prod Studio</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../prodstudio/prodstudio/">Resumo</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Driver</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../driver/">Driver</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">FindElement</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#classe-findelement">Classe FindElement</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#find_element">find_element</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#first_to_find">first_to_find</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implicitly_wait">implicitly_wait</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fire/">FireHiving</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../wait/">WaitElement</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Action</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../action/execute/">Execute</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Automation Studio.</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Driver &raquo;</li>
+        
+      
+    
+    <li>FindElement</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="encontrando-elemento">Encontrando Elemento</h1>
+<h2 id="classe-findelement">Classe FindElement</h2>
+<p>A classe <em>FindElement</em> tem as funções para localizar o elemento na tela.</p>
+<h3 id="find_element">find_element</h3>
+<pre><code class="language-python">driver.find_element(&quot;elemento&quot;)
+</code></pre>
+<p>Procura o elemento na tela.</p>
+<blockquote>
+<p><strong><em>find_element(*paths: str)</em></strong></p>
+<blockquote>
+<p><strong><em>paths</em></strong>: str: O nome dos caminhos das imagens/videos que ficam dentro do .toml.</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: FireHiving: Objeto dá interatividade ao elemento.</p>
+</blockquote>
+<hr />
+<h3 id="first_to_find">first_to_find</h3>
+<p>Procura o elemento na tela e retorna o primeiro elemento que encontrar.</p>
+<blockquote>
+<p><strong><em>first_to_find(*paths: str, tip: List[int] = None)</em></strong></p>
+<blockquote>
+<p><strong><em>paths</em></strong>: str: O nome dos caminhos das imagens/videos que ficam dentro do .toml.</p>
+<p><strong><em>tip</em></strong>: int: Dica na tela de onde fica a imagem/video procurado</p>
+</blockquote>
+<p><strong><em>Return</em></strong>: FireHiving: Objeto dá interatividade ao elemento.</p>
+</blockquote>
+<hr />
+<h3 id="implicitly_wait">implicitly_wait</h3>
+<p>Vai travar a execução do programa pelo tempo passado. É bem parecido com o sleep.</p>
+<blockquote>
+<p><strong><em>implicitly_wait(time: float)</em></strong></p>
+<blockquote>
+<p><strong><em>time</em></strong>:float: tempo que vai travar a execução do programa.</p>
+</blockquote>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fire/" class="btn btn-neutral float-right" title="FireHiving">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../driver/" class="btn btn-neutral" title="Driver"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../driver/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../fire/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

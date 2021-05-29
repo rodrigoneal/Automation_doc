@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Execute - Automation Studio.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Execute";
+    var mkdocs_page_input_path = "action\\execute.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Automation Studio.</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Home</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Automation Studio</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick/">Quick start</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Prod Studio</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../prodstudio/prodstudio/">Resumo</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Driver</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../driver/driver/">Driver</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../driver/find/">FindElement</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../driver/fire/">FireHiving</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../wait/">WaitElement</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Action</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Execute</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#importando">Importando</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#desactive_numlock">desactive_numlock</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#submit">submit</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy">copy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy_one_click">copy_one_click</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy_double_click">copy_double_click</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy_press_home_end">copy_press_home_end</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy_press_space">copy_press_space</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hot_key">hot_key</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Automation Studio.</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Action &raquo;</li>
+        
+      
+    
+    <li>Execute</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="execute">Execute</h1>
+<p>Modulo que reúne algumas funções que ajudam no desenvolvimento com o automation studio.</p>
+<h4 id="importando">Importando</h4>
+<pre><code class="language-python">from automation_studio.action import execute
+</code></pre>
+<h2 id="desactive_numlock">desactive_numlock</h2>
+<p>Gerenciador de contexto que aperta desativa o numlock enquanto executa o comando passado e depois reativa o numlock</p>
+<pre><code class="language-python">with desactive_numlock():
+    pyautogui.hotkey('ctrl','c')
+</code></pre>
+<p>Alguns comandos do pyautogui não funciona com o numlock ativo.</p>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="submit">submit</h2>
+<p>Aperta o Enter. </p>
+<pre><code class="language-python">submit()
+</code></pre>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="copy">copy</h2>
+<p>Copia o elemento com "CTRL"+"C".</p>
+<p>Pode ser usado dentro do metodo copy do <a href="../../driver/fire/#copy">FireHiving</a> no func_copy</p>
+<pre><code class="language-python">driver.find_element('element').copy(execute.copy)
+</code></pre>
+<pre><code>Obs: Você não pode passar a chamada da função "copy()", O metodo vai fazer a chamada da função dentro dele.
+
+PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
+</code></pre>
+<p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<hr />
+<h2 id="copy_one_click">copy_one_click</h2>
+<p>Clica e copia o elemento "CTRL"+"C".</p>
+<p>Pode ser usado dentro do metodo copy do <a href="../../driver/fire/#copy">FireHiving</a> no func_copy</p>
+<pre><code class="language-python">driver.find_element('element').copy(execute.copy_one_click)
+</code></pre>
+<pre><code>Obs: Você não pode passar a chamada da função "copy_one_click()", O metodo vai fazer a chamada da função dentro dele.
+
+PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
+</code></pre>
+<p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<hr />
+<h2 id="copy_double_click">copy_double_click</h2>
+<p>Clica duas vezes e copia o elemento "CTRL"+"C".</p>
+<p>Pode ser usado dentro do metodo copy do <a href="../../driver/fire/#copy">FireHiving</a> no func_copy</p>
+<pre><code class="language-python">driver.find_element('element').copy(execute.copy_double_click)
+</code></pre>
+<pre><code>Obs: Você não pode passar a chamada da função "copy_double_click()", O metodo vai fazer a chamada da função dentro dele.
+
+PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
+</code></pre>
+<p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<hr />
+<h2 id="copy_press_home_end">copy_press_home_end</h2>
+<p>Clica no elemento aperta "Home" para ir para o começo do elemento aperta "Shift" + "End" para selecionar todo elemento e copia o elemento "CTRL"+"C".</p>
+<p>Pode ser usado dentro do metodo copy do <a href="../../driver/fire/#copy">FireHiving</a> no func_copy</p>
+<pre><code class="language-python">driver.find_element('element').copy(execute.copy_press_home_end)
+</code></pre>
+<pre><code>Obs: Você não pode passar a chamada da função "copy_press_home_end()", O metodo vai fazer a chamada da função dentro dele.
+
+PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
+</code></pre>
+<p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<h2 id="copy_press_space">copy_press_space</h2>
+<p>Clica no elemento e aperta "space" para selecionar e copia o elemento "CTRL"+"C".</p>
+<p>Pode ser usado dentro do metodo copy do <a href="../../driver/fire/#copy">FireHiving</a> no func_copy</p>
+<pre><code class="language-python">driver.find_element('element').copy(execute.copy_press_space)
+</code></pre>
+<pre><code>Obs: Você não pode passar a chamada da função "copy_press_space()", O metodo vai fazer a chamada da função dentro dele.
+
+PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
+</code></pre>
+<p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<h2 id="hot_key">hot_key</h2>
+<p>É a mistura do puautogui.press e o pyautogui.hotkey.</p>
+<p>Para não ficar importando a biblioteca pyautogui desnecessariamente. </p>
+<blockquote>
+<p>hot_key(args: Union[List, str, Tuple],time_after_press: float = 0, time_before_press: float = 0, **kwargs: Any)</p>
+<blockquote>
+<p><strong><em>args</em></strong>:Union[List, str, Tuple]: Se for passado um str vai chamada o press do pyautogui, se passar uma lista ou tupla ele vai chamar o hotkey</p>
+</blockquote>
+</blockquote>
+<p>Exemplo:</p>
+<pre><code class="language-python">execute.hot_key('space')
+</code></pre>
+<p>Ele só vai aperta o "Space"</p>
+<pre><code class="language-python">execute.hot_key(['ctrl', 'c'])
+</code></pre>
+<p>Ele vai segura o "CTRL" e apertar "C"</p>
+<p><strong><em>time/</em>after/_press</strong>_: float: Tempo que vai parar depois de apertar os botões.</p>
+<p><strong><em>time/</em>before/_press</strong>_: float: Tempo que vai parar antes de apertar os botões.</p>
+<p>Exemplo:</p>
+<pre><code class="language-python">execute.hot_key('space', time_before_press=1, time_after_press=1)
+</code></pre>
+<p>Nesse exemplo ele vai travar a execução por 1 segundo, apertar "Space" e travar a execução por 1 segundo.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../wait/" class="btn btn-neutral" title="WaitElement"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../wait/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
