@@ -63,6 +63,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Driver</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#argumentos">Argumentos</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../find/">FindElement</a>
@@ -77,6 +79,11 @@
                 <p class="caption"><span class="caption-text">Action</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../action/execute/">Execute</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Sobre</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sobre/sobre/">Sobre</a>
                     </li>
                 </ul>
       </div>
@@ -125,6 +132,17 @@ driver = Driver('arquivo.toml')
 O <em>Driver</em> retorna um objeto FindElement</p>
 <hr />
 <p>O <em>Driver</em> basicamente lê o arquivo toml.</p>
+<h2 id="argumentos">Argumentos</h2>
+<p>O <em>Driver</em> tem a limitação de só interagir com elementos na tela primaria. Por isso no <em>Driver</em> tem argumento <strong>primary_screen</strong> que você seleciona a tela que deseja colocar como primaria.</p>
+<p>Só que aí dependemos de outro programa para fazer isso.</p>
+<p>Você terá que baixar o <a href="https://www.nirsoft.net/utils/nircmd.zip">nircmd</a> que faz a troca da tela primaria. </p>
+<p>Você pode optar por fazer o download do <em>nircmd</em> e fazer essa troca pelo <em>Driver</em> ou você pode fazer a mudança no proprio Windows.</p>
+<p>Por <em>default</em> o driver vai buscar o <em>nircmd</em> no <code>C:\\nircmd\</code>, mas você pode mudar o caminho no <em>Driver</em> chame o argumento <strong><em>path_nircmd</em></strong></p>
+<p>Vamos exemplificar.</p>
+<pre><code class="language-python">driver = Driver('config.toml', primary_screen=2, path_nircmd=r&quot;C:\Users\rodri\Downloads&quot;)
+</code></pre>
+<p>O <em>Prod Studio</em> consegue mapear elementos mesmo que não estejam na tela primaria, mas você precisará passar no <strong>primary_screen</strong> a tela que deseja mapear e rodar o <em>Driver</em> antes de fazer o mapeamento.</p>
+<p>O <em>Driver</em> vai criar um arquivo <strong>metadata.json</strong> que dirá ao <em>Prod Studio</em> qual tela você deseja mapear. Mas isso só serve para mapear elemento, para interagir você precisará fazer os passos acima.</p>
               
             </div>
           </div>

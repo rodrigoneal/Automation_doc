@@ -94,7 +94,26 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#hot_key">hot_key</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#maximize_screen">maximize_screen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#center_mouse">center_mouse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run_on_subprocess">run_on_subprocess</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#window_close">window_close</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kill_process">kill_process</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pid_process">pid_process</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#list_all_process">list_all_process</a>
+    </li>
     </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Sobre</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sobre/sobre/">Sobre</a>
                     </li>
                 </ul>
       </div>
@@ -139,7 +158,7 @@
 <pre><code class="language-python">from automation_studio.action import execute
 </code></pre>
 <h2 id="desactive_numlock">desactive_numlock</h2>
-<p>Gerenciador de contexto que aperta desativa o numlock enquanto executa o comando passado e depois reativa o numlock</p>
+<p>Gerenciador de contexto que desativa o numlock enquanto executa o comando passado e reativa o numlock</p>
 <pre><code class="language-python">with desactive_numlock():
     pyautogui.hotkey('ctrl','c')
 </code></pre>
@@ -195,6 +214,7 @@ PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um p
 PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
 </code></pre>
 <p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<hr />
 <h2 id="copy_press_space">copy_press_space</h2>
 <p>Clica no elemento e aperta "space" para selecionar e copia o elemento "CTRL"+"C".</p>
 <p>Pode ser usado dentro do metodo copy do <a href="../../driver/fire/#copy">FireHiving</a> no func_copy</p>
@@ -205,7 +225,9 @@ PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um p
 PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um programa
 </code></pre>
 <p><strong><em>Return</em></strong>: Elemento copiado.</p>
+<hr />
 <h2 id="hot_key">hot_key</h2>
+<p>Executa comandos de teclado. </p>
 <p>É a mistura do puautogui.press e o pyautogui.hotkey.</p>
 <p>Para não ficar importando a biblioteca pyautogui desnecessariamente. </p>
 <blockquote>
@@ -227,12 +249,65 @@ PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um p
 <pre><code class="language-python">execute.hot_key('space', time_before_press=1, time_after_press=1)
 </code></pre>
 <p>Nesse exemplo ele vai travar a execução por 1 segundo, apertar "Space" e travar a execução por 1 segundo.</p>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="maximize_screen">maximize_screen</h2>
+<p>Maximiza a tela.</p>
+<p><strong><em>time/</em>before/_press</strong>_: float: Tempo que vai parar antes de maximiza a tela.
+<strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="center_mouse">center_mouse</h2>
+<p>Coloca o mouse no centro da tela.</p>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="run_on_subprocess">run_on_subprocess</h2>
+<p>Executa comandos no prompt.</p>
+<p><strong><em>driver</em></strong>: Driver: Driver com o arquivo toml.
+<strong><em>command</em></strong>: str: Comando dentro do toml que deseja executar.</p>
+<p>Exemplo:</p>
+<p>Vamos abrir o SAP.</p>
+<pre><code class="language-python">driver = Drive('config.toml')
+run_on_subprocess(driver, 'sap')
+</code></pre>
+<p>Dentro do toml você precisa passar a do sap com o caminho do executavel. </p>
+<pre><code class="language-toml">[command]
+sap = &quot;C:/Program Files (x86)/SAP/FrontEnd/SAPgui/saplogon.exe&quot;
+</code></pre>
+<p>O <em>run_on_subprocess</em> vai dentro do toml buscar a chave <em>command</em> pegando o caminho do executavel do SAP. </p>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="window_close">window_close</h2>
+<p>Fecha o programa.</p>
+<p>Vai fazer o "ALT" + "F4" simples.</p>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="kill_process">kill_process</h2>
+<p>Mata o processo.</p>
+<p>Pode passar o nome do processo ou o PID.</p>
+<p><strong><em>process</em></strong>: Union[str, int]: Nome ou PID do processo que deseja encerrar.</p>
+<p>Se passar o nome do processo não precisa passar a extensão dele.</p>
+<p>Exemplo:</p>
+<p>Vamos fechar o chrome.</p>
+<pre><code class="language-python">kill_process('chrome')
+</code></pre>
+<p>Não precisa passar <code>kill_process('chrome.exe')</code>.</p>
+<p><strong><em>Return</em></strong>: None</p>
+<hr />
+<h2 id="pid_process">pid_process</h2>
+<p>retorna o PID do processo.</p>
+<p><strong><em>process</em></strong>:str: Nome do processo que deseja o PID.</p>
+<p><strong><em>Return</em></strong>: int: O PID.</p>
+<h2 id="list_all_process">list_all_process</h2>
+<p>Lista todos os processos no sistema.</p>
+<p><strong><em>Return</em></strong>: List[dict[str, int]]: todos os processos do sistema.</p>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../sobre/sobre/" class="btn btn-neutral float-right" title="Sobre">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../wait/" class="btn btn-neutral" title="WaitElement"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -263,6 +338,8 @@ PS: Elemento pode ser qualquer coisa que seja copiado. Um texto; uma pasta; um p
       
         <span><a href="../../wait/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../../sobre/sobre/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
